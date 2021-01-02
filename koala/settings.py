@@ -15,20 +15,25 @@ import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
+
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'n_-g*lp5k-uql%u=5c)m@4q2-o(ktesz8%qxap62*t4i0kt36!'
+PRODUCTION_SECRET = os.getenv('KOALA_SECRET_KEY')
+if (PRODUCTION_SECRET != None):
+    SECRET_KEY = PRODUCTION_SECRET
+else:
+    SECRET_KEY = 'n_-g*lp5k-uql%u=5c)m@4q2-o(ktesz8%qxap62*t4i0kt36!'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 if (os.getenv('KOALA_DEBUG') == None):
     Debug = True
+    ALLOWED_HOSTS = ['*']
 else:
     DEBUG = False
+    ALLOWED_HOSTS = ['koala-staging.herokuapp.com']
 
-ALLOWED_HOSTS = ['*']
 
 # Application definition
 
