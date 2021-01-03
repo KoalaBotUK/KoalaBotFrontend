@@ -1,0 +1,16 @@
+
+language: generic
+
+matrix:
+  include:
+
+  - language: python
+    python: "3.8"
+
+    env:
+    - JOBNAME=PYLINT
+
+    install:
+        - pip install -r requirements.txt
+    scripts:
+        - pytest --pylint

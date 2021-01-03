@@ -21,13 +21,13 @@ BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 PRODUCTION_SECRET = os.getenv('KOALA_SECRET_KEY')
-if (PRODUCTION_SECRET != None):
+if (PRODUCTION_SECRET is not None):
     SECRET_KEY = PRODUCTION_SECRET
 else:
     SECRET_KEY = 'n_-g*lp5k-uql%u=5c)m@4q2-o(ktesz8%qxap62*t4i0kt36!'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-if (os.getenv('KOALA_DEBUG') == None):
+if (os.getenv('KOALA_DEBUG') is None):
     Debug = True
     ALLOWED_HOSTS = ['*']
 else:
