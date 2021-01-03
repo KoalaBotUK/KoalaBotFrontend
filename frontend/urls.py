@@ -6,5 +6,6 @@ urlpatterns = [
     path('', views.homepage),
     path('settings/', views.settings),
     path('verify/', views.verify),
-    path('twitch/', views.twitch)
+    path('twitch/', views.twitch),
+    path('socialalert/', views.socialAlert)
 ]

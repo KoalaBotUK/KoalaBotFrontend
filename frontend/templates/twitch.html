@@ -1,22 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-
+{% extends 'base.html' %}
 {% load static %}
 
-<head>
-    <link rel="stylesheet" href="{% static "twitch.css" %}">
-    <meta charset="UTF-8">
-    <title>Twitch Alerts Cog</title>
-</head>
+{% block title %}
+        <title>Koalabot | Twitch</title>
+{% endblock %}
 
-<body>
-    <h1>Twitch Alerts Cog</h1>
-    <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/settings">Settings</a></li>
-        <li><a href="/twitch">Twitch</a></li>
-        <li><a href="/verify">Verify</a></li>
-    </ul>
-</body>
-
-</html>
+{% block requirements %}
+        {{ block.super }}
+        <link rel="stylesheet" href="{% static 'twitch.css' %}">
+{% endblock %}

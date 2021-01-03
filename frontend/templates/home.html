@@ -1,197 +1,133 @@
-<!DOCTYPE html>
-<html>
-<head>
-	{% load static %}
-	<meta charset="utf-8">
-    <meta content="width=device-width, initial-scale=1" name="viewport" />
-	<title>Koalabot | Dashboard</title>
-	<script type="text/javascript" src="{% static 'home.js' %}"></script>
-	<link rel="stylesheet" href="{% static 'home.css' %}">
-	<link rel="stylesheet" href="{% static 'hamburger.css' %}">
-	<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
-</head>
-<body>
-	<nav id="nav">
-		<a onclick="toggleFullNavigationBar()">
-			<div class="icon">
-				<i class="hamburger"><span></span></i>
-			</div>
-		</a>
-		<a class="dark">
-			<div class="icon">
-				<i class="fa fa-search fa-lg"></i>
-			</div>
-			<input type="text" name="">
-		</a>
-		<a class="dark" href="/">
-			<div class="icon">
-				<i class="fa fa-th-large fa-lg"></i>
-			</div>
-			<p>Dashboard</p>
-		</a>
-		<a class="dark" href="/settings">
-			<div class="icon">
-				<i class="fa fa-cog fa-lg"></i>
-			</div>
-			<p>Settings</p>
-		</a>
-		<a href="/verify">
-			<div class="icon">
-				<i class="fa fa-check fa-lg"></i>
-			</div>
-			<p>Verify</p>
-		</a>
-		<a href="/twitch">
-			<div class="icon">
-				<i class="fab fa-twitch fa-lg"></i>
-			</div>
-			<p>Twitch Notify</p>
-		</a>
-		<a>
-			<div class="icon">
-				<i class="fas fa-users fa-lg"></i>
-			</div>
-			<p>Social Alert</p>
-		</a>
-	</nav>
-	<div class="content">
-		<header>
-			<p>Dark Mode</p>
-			<label class="switch">
-			  <input type="checkbox" onchange="toggleDarkMode()">
-			  <span class="slider round"></span>
-			</label>
-			<div class="vertical-container end">
-				<h4>Username#0000</h4>
-				<p>Koala Dev</p>
-			</div>
-			<div class="profile-icon">
-				<i class="fas fa-user"></i>
-			</div>
-		</header>
+{% extends 'base.html' %}
+{% load static %}
 
-		<main>
-			<section id="stats">
-				<div class="left">
-					<div class="row">
-						<div class="vertical-container start">
-							<h3>TOTAL MEMBERS</h3>
-							<p>Online</p>
-						</div>
-						<div class="vertical-container end">
-							<h3>1 340</h3>
-							<p>820</p>
-						</div>
-					</div>
-					<div class="row">
-						<div class="vertical-container start">
-							<h3>ENABLED EXTENSIONS</h3>
-							<p>Add Extensions</p>
-						</div>
-						<div class="vertical-container end">
-							<h3>3</h3>
-						</div>
-					</div>
-					<div class="row">
-						<div class="vertical-container start">
-							<h3>KOALA PRO</h3>
-							<p>Get access to Pro Extensions!</p>
-						</div>
-						<div class="vertical-container end">
-							<h3>Go Pro</h3>
-						</div>
-					</div>
-				</div>
-				<div class="right">
-					<p>Graphs go here</p>
-				</div>
-			</section>
+{% block title %}
+		<title>Koalabot | Dashboard</title>
+{% endblock %}
 
-			<section id="extensions">
-				<div class="title-row">
-					<h3>KOALA EXTENSIONS</h3>
-					<div class="buttons">
-						<div class="button"><i class="fa fa-plus-square"></i></div>
-						<div class="button"><i class="fa fa-cog"></i></div>
-					</div>
-				</div>
-				<div class="border" style="min-height: 250px;background-color: var(--koala-section-background-dark);">
-					<div class="extensions-container">
-						<div class="pill"><p>Verify</p></div>
-						<div class="pill"><p>Twitch Alert</p></div>
-						<div class="pill"><p>Social Alert</p></div>
-						<div class="pill light">+</div>
-					</div>
-				</div>
-			</section>
+{% block requirements %}
+		{{ block.super }}
+		<link rel="stylesheet" href="{% static 'home.css' %}">
+{% endblock %}
 
-			<section id="updates">
-				<div class="left">
-					<h3>NEW TICKETS</h3>
-					<div class="border scroll-container vertical-container justify-start">
-						<div class="ticket">
-							<div class="ticket-head">
-								<div class="profile-icon"><i class="fas fa-user"></i></div>
-								<div class="vertical-container">
-									<h3>CRISTAN BILNEY</h3>
-									<p>Just Now</p>
-								</div>
-							</div>
-							<div class="ticket-body">
-								<p>Lorem Ipsum dolor sit ametm consectetur adipising elit, sed do eiusmod tempor incidunt</p>
-							</div>
-						</div>
-						<div class="ticket">
-							<div class="ticket-head">
-								<div class="profile-icon"><i class="fas fa-user"></i></div>
-								<div class="vertical-container">
-									<h3>HEDY VANETTI</h3>
-									<p>1 day ago</p>
-								</div>
-							</div>
-							<div class="ticket-body">
-								<p>Lorem Ipsum dolor sit ametm consectetur adipising elit, sed do eiusmod tempor incidunt</p>
-							</div>
-						</div>
-						<div class="ticket">
-							<div class="ticket-head">
-								<div class="profile-icon"><i class="fas fa-user"></i></div>
-								<div class="vertical-container">
-									<h3>FRANCISCA TIREMAN</h3>
-									<p>54 days ago</p>
-								</div>
-							</div>
-							<div class="ticket-body">
-								<p>Lorem Ipsum dolor sit ametm consectetur adipising elit, sed do eiusmod tempor incidunt</p>
-							</div>
-						</div>
-						<div class="ticket">
-							<div class="ticket-head">
-								<div class="profile-icon"><i class="fas fa-user"></i></div>
-								<div class="vertical-container">
-									<h3>JOSEPH WILLIAMS</h3>
-									<p>1 year ago</p>
-								</div>
-							</div>
-							<div class="ticket-body">
-								<p>Lorem Ipsum dolor sit ametm consectetur adipising elit, sed do eiusmod tempor incidunt</p>
-							</div>
-						</div>
-					</div>
+{% block content %}
+	<section id="stats">
+		<div class="left">
+			<div class="row">
+				<div class="vertical-container start">
+					<h3>TOTAL MEMBERS</h3>
+					<p>Online</p>
 				</div>
-				<div class="right">
-					<h3>KOALA UPDATES<i class="fab fa-twitter"></i></h3>
-					<div class="border scroll-container">
-						<a class="twitter-timeline" data-dnt="true" data-chrome="transparent" data-theme="light" href="https://twitter.com/KoalaBotUK?ref_src=twsrc%5Etfw">Tweets by KoalaBotUK</a>
-					</div>
+				<div class="vertical-container end">
+					<h3>1 340</h3>
+					<p>820</p>
 				</div>
-			</section>
-		</main>
+			</div>
+			<div class="row">
+				<div class="vertical-container start">
+					<h3>ENABLED EXTENSIONS</h3>
+					<p>Add Extensions</p>
+				</div>
+				<div class="vertical-container end">
+					<h3>3</h3>
+				</div>
+			</div>
+			<div class="row">
+				<div class="vertical-container start">
+					<h3>KOALA PRO</h3>
+					<p>Get access to Pro Extensions!</p>
+				</div>
+				<div class="vertical-container end">
+					<h3>Go Pro</h3>
+				</div>
+			</div>
+		</div>
+		<div class="right">
+			<p>Graphs go here</p>
+		</div>
+	</section>
 
-		<footer>
-			<p>© KoalaBotUK 2020</p>
-		</footer>
-	</div>
-	<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-</body>
-</html>
+	<section id="extensions">
+		<div class="title-row">
+			<h3>KOALA EXTENSIONS</h3>
+			<div class="buttons">
+				<div class="button"><i class="fa fa-plus-square"></i></div>
+				<div class="button"><i class="fa fa-cog"></i></div>
+			</div>
+		</div>
+		<div class="border" style="min-height: 250px;background-color: var(--koala-section-background-dark);">
+			<div class="extensions-container">
+				<div class="pill"><p>Verify</p></div>
+				<div class="pill"><p>Twitch Alert</p></div>
+				<div class="pill"><p>Social Alert</p></div>
+				<div class="pill light">+</div>
+			</div>
+		</div>
+	</section>
+
+	<section id="updates">
+		<div class="left">
+			<h3>NEW TICKETS</h3>
+			<div class="border scroll-container vertical-container justify-start">
+				<div class="ticket">
+					<div class="ticket-head">
+						<div class="profile-icon"><i class="fas fa-user"></i></div>
+						<div class="vertical-container">
+							<h3>CRISTAN BILNEY</h3>
+							<p>Just Now</p>
+						</div>
+					</div>
+					<div class="ticket-body">
+						<p>Lorem Ipsum dolor sit ametm consectetur adipising elit, sed do eiusmod tempor incidunt</p>
+					</div>
+				</div>
+				<div class="ticket">
+					<div class="ticket-head">
+						<div class="profile-icon"><i class="fas fa-user"></i></div>
+						<div class="vertical-container">
+							<h3>HEDY VANETTI</h3>
+							<p>1 day ago</p>
+						</div>
+					</div>
+					<div class="ticket-body">
+						<p>Lorem Ipsum dolor sit ametm consectetur adipising elit, sed do eiusmod tempor incidunt</p>
+					</div>
+				</div>
+				<div class="ticket">
+					<div class="ticket-head">
+						<div class="profile-icon"><i class="fas fa-user"></i></div>
+						<div class="vertical-container">
+							<h3>FRANCISCA TIREMAN</h3>
+							<p>54 days ago</p>
+						</div>
+					</div>
+					<div class="ticket-body">
+						<p>Lorem Ipsum dolor sit ametm consectetur adipising elit, sed do eiusmod tempor incidunt</p>
+					</div>
+				</div>
+				<div class="ticket">
+					<div class="ticket-head">
+						<div class="profile-icon"><i class="fas fa-user"></i></div>
+						<div class="vertical-container">
+							<h3>JOSEPH WILLIAMS</h3>
+							<p>1 year ago</p>
+						</div>
+					</div>
+					<div class="ticket-body">
+						<p>Lorem Ipsum dolor sit ametm consectetur adipising elit, sed do eiusmod tempor incidunt</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="right">
+			<h3>KOALA UPDATES<i class="fab fa-twitter"></i></h3>
+			<div class="border scroll-container">
+				<a class="twitter-timeline" data-dnt="true" data-chrome="transparent" data-theme="light" href="https://twitter.com/KoalaBotUK?ref_src=twsrc%5Etfw">Tweets by KoalaBotUK</a>
+			</div>
+		</div>
+	</section>
+{% endblock %}
+
+{% block endRequirements %}
+		<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+{% endblock %}

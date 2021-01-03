@@ -18,4 +18,9 @@ def twitch(request):
 def verify(request):
     loadTemplate = loader.get_template('verify.html')
     return HttpResponse(loadTemplate.render({}, request))
+
+def socialAlert(request):
+    loadTemplate = loader.get_template('social_alert.html')
+    return HttpResponse(loadTemplate.render({}, request))
+
     
