@@ -9,23 +9,30 @@ https://docs.djangoproject.com/en/3.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
-
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
+
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'n_-g*lp5k-uql%u=5c)m@4q2-o(ktesz8%qxap62*t4i0kt36!'
+PRODUCTION_SECRET = os.getenv('KOALA_SECRET_KEY')
+if (PRODUCTION_SECRET is not None):
+    SECRET_KEY = PRODUCTION_SECRET
+else:
+    SECRET_KEY = 'n_-g*lp5k-uql%u=5c)m@4q2-o(ktesz8%qxap62*t4i0kt36!'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-ALLOWED_HOSTS = []
+if (os.getenv('KOALA_DEBUG') is None):
+    Debug = True
+    ALLOWED_HOSTS = ['*']
+else:
+    DEBUG = False
+    ALLOWED_HOSTS = ['koala-staging.herokuapp.com']
 
 
 # Application definition
@@ -37,10 +44,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'frontend'
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -76,7 +85,7 @@ WSGI_APPLICATION = 'koala.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': str(BASE_DIR / 'db.sqlite3'),
     }
 }
 
@@ -118,3 +127,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+PROJECT_ROOT   =   os.path.join(os.path.abspath(__file__))
+STATIC_ROOT  =   os.path.join(PROJECT_ROOT, '../../frontend/static')
