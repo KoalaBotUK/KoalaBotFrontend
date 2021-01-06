@@ -1,0 +1,16 @@
+#cogs {
+    justify-content: space-between;
+	background-color: var(--koala-section-background);
+}
+
+ul li {
+    padding-top: 20px;
+}
+
+section#commands {
+    left: auto;
+}
+
+div.cogs {
+    margin-top: 50px;
+}

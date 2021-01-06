@@ -50,4 +50,7 @@ def socialAlert(request):
     loadTemplate = loader.get_template('social_alert.html')
     return HttpResponse(loadTemplate.render({}, request))
 
+def cogs(request):
+    loadTemplate = loader.get_template('cogs.html')
+    return HttpResponse(loadTemplate.render({}, request))
     
