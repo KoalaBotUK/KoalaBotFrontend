@@ -1,0 +1,3 @@
+[submodule "KoalaBot"]
+	path = KoalaBot
+	url = https://github.com/KoalaBotUK/KoalaBot

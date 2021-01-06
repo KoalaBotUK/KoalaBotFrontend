@@ -29,3 +29,6 @@ disable=
     # handled by black
     format,
     import-outside-toplevel
+
+[MASTER]
+init-hook='import sys; sys.path.append("KoalaBot")'
