@@ -1,8 +1,3 @@
-#cogs {
-    justify-content: space-between;
-	background-color: var(--koala-section-background);
-}
-
 ul li {
     padding-top: 20px;
 }
@@ -11,6 +6,10 @@ section#commands {
     left: auto;
 }
 
-div.cogs {
-    margin-top: 50px;
+div.cogs, div.extension {
+    padding: 10px 0px 10px 0px;
+}
+
+h1 {
+    padding-bottom: 10px;
 }

@@ -2,7 +2,7 @@
 {% load static %}
     
 {% block title %}
-        <title>Koalabot | COGS</title>
+        <title>Koalabot | Cogs</title>
 {% endblock %}
     
 {% block requirements %}
@@ -12,9 +12,9 @@
     
 {% block content %}
 	<section id="commands">
-        <h2>LIST OF COGS</h2>
+        <h1>LIST OF COGS</h1>
 
-        <div cogs = "cogs">
+        <div class = "cogs">
             <h2>KoalaBot (Base)</h2>
             <ul>
             <li><code>enableExt<koala_extension></code>
@@ -54,8 +54,7 @@
 
         <div class = "cogs">
             <h2>Koala Extensions</h2>
-            <div class = "extensions">
-                <div id = "verify">
+                <div class = "extension">
                 <h4>Verify</h4>
                     <ul>
                     <li><code>verifyAdd [suffix] [role]</code>
@@ -76,7 +75,7 @@
                     </ul>
                 </div>
 
-                <div id = "textFilter">
+                <div class = "extension">
                     <h4>Text Filter</h4>
                     <ul>
                     <li><code>filter <text> [type]</code>
@@ -125,7 +124,7 @@
                     </ul>   
                     </div>
                     
-                <div id = "rfr">
+                <div class = "extension">
                     <h4>React For Role (RFR)</h4>
                     <ul>
                     <li><code>rfr create</code>
@@ -162,7 +161,7 @@
                     </ul>
                 </div>
 
-                <div id = "colourRole">
+                <div class = "extension">
                     <h4>ColourRole</h4>
                     <ul>
                     <li><code>listCustomColourAllowedRoles</code>
@@ -191,7 +190,7 @@
                     </ul>
                 </div>
 
-                <div id = "twitchAlert">
+                <div class = "extension">
                 <h4>Twitch Alert</h4>
                     <ul>
                     <li><code>twitchEditMsg <channel_id> [default_live_message...]</code>
