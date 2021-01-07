@@ -13,91 +13,6 @@
 {% block content %}
 	<section id="commands">
         <h2>LIST OF COGS</h2>
-        <div class = "cogs">
-            <h4>Text Filter</h4>
-            <ul>
-            <li><code>filter <text> [type]</code>
-                <br>
-                Filter a word or string of text. Type is defaulted to banned which will delete the message and warn the user. Use type <code>risky</code> to just warn the user.</li>
-
-            <li><code>filterRegex <regex> [type] </code>
-                <br>
-                Filter a regex string. Type is defaulted to banned which will delete the message and warn the user. Use type <code>risky</code> to just warn the user.</li>
-                
-            <li><code>filterList</code>
-                <br>
-                filterList Get a list of filtered words in the server</li>
-                
-            <li><code>modChannelAdd <channelId></code>
-                <br>
-                Add a mod channel for receiving filtered message information (User, Timestamp, Message) to be sent to.</li>
-                
-            <li><code>modChannelRemove <channelId></code>
-                <br>
-                Remove a mod channel from the server.</li>
-                
-            <li><code>modChannelList <channelId></code>
-                <br>
-                See a list of mod channels in the server.</li>
-                
-            <li><code>ignoreUser <userMention></code>
-                <br>
-                Add a new ignored user for the server. This users' messages will be ignored by the Text Filter.</li>
-            
-            <li><code>ignoreChannel <channelMention></code>
-                <br>
-                ignoreChannel <channelMention> Add a new ignored channel for the server. Messages in this channel will be ignored by the Text Filter.</li>
-                
-            <li><code>ignoreList</code>
-                <br>
-                ignoreList See a list of ignored users/channels in the server.</li>
-
-            <li><code>unfilter <text></code>  
-                <br>
-                unfilter <text> Unfilter a word/string/regex of text that was previously filtered.</li>
-                
-            <li><code>unignore <mention></code>
-                <br>
-                Unignore a user/channel that was previously set as ignored.</li>
-            </ul>   
-            </div>
-            
-        <div class = "cogs">
-            <h4>React For Role (RFR)</h4>
-            <ul>
-            <li><code>rfr create</code>
-                <br>
-                Create a new, blank rfr message. Default title is React for Role. Default description is Roles below!.</li>
-
-            <li><code>rfr delete</code>
-                <br>
-                Delete an existing rfr message.</li>
-
-            <li><code>rfr addRequiredRole </code>
-                <br>
-                Add a role required to react to/use rfr functionality. If no role is added, anyone can use rfr functionality.</li>
-
-            <li><code>rfr removeRequiredRole </code>
-                <br>
-                Removes a role from the group of roles someone requires to use rfr functionality.</li>
-
-            <li><code>rfr edit addRoles </code>
-                <br>
-                Add emoji/role combos to an existing rfr message.</li>
-
-            <li><code>rfr edit removeRoles </code>
-                <br>
-                Remove emoji/role combos from an existing rfr message.</li>
-
-            <li><code>rfr edit description </code>
-                <br>
-                Edit the description of an existing rfr message.</li>
-
-            <li><code>rfr edit title </code>
-                <br>
-                Edit the title of an existing rfr message.</li>
-            </ul>
-        </div>
 
         <div cogs = "cogs">
             <h2>KoalaBot (Base)</h2>
@@ -136,6 +51,7 @@
             </ul>
         </div>
 
+
         <div class = "cogs">
             <h2>Koala Extensions</h2>
             <div class = "extensions">
@@ -157,6 +73,121 @@
                     <li><code>verifyList</code>
                         <br>
                         List the current verification setup for the server</li>
+                    </ul>
+                </div>
+
+                <div id = "textFilter">
+                    <h4>Text Filter</h4>
+                    <ul>
+                    <li><code>filter <text> [type]</code>
+                        <br>
+                        Filter a word or string of text. Type is defaulted to banned which will delete the message and warn the user. Use type <code>risky</code> to just warn the user.</li>
+        
+                    <li><code>filterRegex <regex> [type] </code>
+                        <br>
+                        Filter a regex string. Type is defaulted to banned which will delete the message and warn the user. Use type <code>risky</code> to just warn the user.</li>
+                        
+                    <li><code>filterList</code>
+                        <br>
+                        filterList Get a list of filtered words in the server</li>
+                        
+                    <li><code>modChannelAdd <channelId></code>
+                        <br>
+                        Add a mod channel for receiving filtered message information (User, Timestamp, Message) to be sent to.</li>
+                        
+                    <li><code>modChannelRemove <channelId></code>
+                        <br>
+                        Remove a mod channel from the server.</li>
+                        
+                    <li><code>modChannelList <channelId></code>
+                        <br>
+                        See a list of mod channels in the server.</li>
+                        
+                    <li><code>ignoreUser <userMention></code>
+                        <br>
+                        Add a new ignored user for the server. This users' messages will be ignored by the Text Filter.</li>
+                    
+                    <li><code>ignoreChannel <channelMention></code>
+                        <br>
+                        ignoreChannel <channelMention> Add a new ignored channel for the server. Messages in this channel will be ignored by the Text Filter.</li>
+                        
+                    <li><code>ignoreList</code>
+                        <br>
+                        ignoreList See a list of ignored users/channels in the server.</li>
+        
+                    <li><code>unfilter <text></code>  
+                        <br>
+                        unfilter <text> Unfilter a word/string/regex of text that was previously filtered.</li>
+                        
+                    <li><code>unignore <mention></code>
+                        <br>
+                        Unignore a user/channel that was previously set as ignored.</li>
+                    </ul>   
+                    </div>
+                    
+                <div id = "rfr">
+                    <h4>React For Role (RFR)</h4>
+                    <ul>
+                    <li><code>rfr create</code>
+                        <br>
+                        Create a new, blank rfr message. Default title is React for Role. Default description is Roles below!.</li>
+        
+                    <li><code>rfr delete</code>
+                        <br>
+                        Delete an existing rfr message.</li>
+        
+                    <li><code>rfr addRequiredRole </code>
+                        <br>
+                        Add a role required to react to/use rfr functionality. If no role is added, anyone can use rfr functionality.</li>
+        
+                    <li><code>rfr removeRequiredRole </code>
+                        <br>
+                        Removes a role from the group of roles someone requires to use rfr functionality.</li>
+        
+                    <li><code>rfr edit addRoles </code>
+                        <br>
+                        Add emoji/role combos to an existing rfr message.</li>
+        
+                    <li><code>rfr edit removeRoles </code>
+                        <br>
+                        Remove emoji/role combos from an existing rfr message.</li>
+        
+                    <li><code>rfr edit description </code>
+                        <br>
+                        Edit the description of an existing rfr message.</li>
+        
+                    <li><code>rfr edit title </code>
+                        <br>
+                        Edit the title of an existing rfr message.</li>
+                    </ul>
+                </div>
+
+                <div id = "colourRole">
+                    <h4>ColourRole</h4>
+                    <ul>
+                    <li><code>listCustomColourAllowedRoles</code>
+                        <br>
+                        Lists the roles in a guild which are permitted to have their own custom colours.</li>
+
+                    <li><code>listProtectedRoleColours</code>
+                        <br>
+                        Lists the protected roles, whose colours are protected from being imitated by a custom colour, in a guild.</li>
+                        
+                    <li><code>addCustomColourAllowedRole <role></code>
+                        <br>
+                        Adds a role, via ID, mention or name, to the list of roles allowed to have a custom colour.</li>
+
+                    <li><code>addProtectedRoleColour <role_str></code>
+                        <br>
+                        Adds a role, via ID, mention or name, to the list of protected roles.</li>
+
+                    <li><code>removeCustomColourAllowedRole <role_str></code>
+                        <br>
+                        Removes a role, via ID, mention or name, from the list of roles allowed to have a custom colour.</li>
+
+                    <li><code>removeProtectedRoleColour <role_str></code>
+                        <br>
+                        Removes a role, via ID, mention or name, from the list of protected roles.</li>
                     </ul>
                 </div>
 
@@ -190,35 +221,6 @@
                     <li><code>twitchRemoveTeam <channel_id> [team_name]</code>
                         <br>
                         Removes a team from a Twitch Alert</li>    
-                    </ul>
-                </div>
-
-                <div id = "colourRole">
-                    <h4>ColourRole</h4>
-                    <ul>
-                    <li><code>listCustomColourAllowedRoles</code>
-                        <br>
-                        Lists the roles in a guild which are permitted to have their own custom colours.</li>
-
-                    <li><code>listProtectedRoleColours</code>
-                        <br>
-                        Lists the protected roles, whose colours are protected from being imitated by a custom colour, in a guild.</li>
-                        
-                    <li><code>addCustomColourAllowedRole <role></code>
-                        <br>
-                        Adds a role, via ID, mention or name, to the list of roles allowed to have a custom colour.</li>
-
-                    <li><code>addProtectedRoleColour <role_str></code>
-                        <br>
-                        Adds a role, via ID, mention or name, to the list of protected roles.</li>
-
-                    <li><code>removeCustomColourAllowedRole <role_str></code>
-                        <br>
-                        Removes a role, via ID, mention or name, from the list of roles allowed to have a custom colour.</li>
-
-                    <li><code>removeProtectedRoleColour <role_str></code>
-                        <br>
-                        Removes a role, via ID, mention or name, from the list of protected roles.</li>
                     </ul>
                 </div>
             </div>
