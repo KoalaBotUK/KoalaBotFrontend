@@ -13,4 +13,4 @@ matrix:
     install:
         - pip install -r requirements.txt
     scripts:
-        - pytest --pylint
+        - pytest --pylint --ignore KoalaBot
