@@ -1,8 +1,9 @@
 from django.http import HttpResponse
 from django.template import loader
+from django.shortcuts import render
+from .forms import *
 
 import KoalaBot
-
 
 class TwitchAlert:
 
@@ -18,10 +19,11 @@ class TwitchAlert:
 
     def view_ta_message(self, channel_id):
         try:
-            msg = self.ta_database_manager.get_default_message(channel_id)
+            message = self.ta_database_manager.get_default_message(channel_id)
         except Warning:
             print()
-        return msg
+        return message
+
 
     def edit_ta_message(self, guild_id, channel_id, message, replace):
         try:
@@ -72,11 +74,14 @@ class TwitchAlert:
             print()
         return twitch_alert_teams
 
-ta = TwitchAlert()
+
+def twitchForm():
+    form = IDSettings()
+    print(form.as_p())
+# ta = TwitchAlert()
 guild_id = 0
 channel_id = 1
 
-# ta.edit_ta_message(guild_id, channel_id, "new message", True)
 # print(ta.view_ta_message(channel_id))
 
 
@@ -94,7 +99,23 @@ def settings(request):
 
 def twitch(request):
     loadTemplate = loader.get_template('twitch.html')
-    return HttpResponse(loadTemplate.render({}, request))
+    forms = []
+    if request.method == 'POST':
+        form = IDSettings(request.POST)
+        form2 = MessageForm(request.POST)
+        form3 = UserForm(request.POST)
+        form4 = TeamForm(request.POST)
+    else:
+        form = IDSettings()
+        form2 = MessageForm()
+        form3 = UserForm()
+        form4 = TeamForm()
+        forms.append(form)
+        forms.append(form2)
+        forms.append(form3)
+        forms.append(form4)
+
+    return HttpResponse(loadTemplate.render({'forms': form}, request))
 
 
 def verify(request):

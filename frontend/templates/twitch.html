@@ -5,6 +5,25 @@
         <title>Koalabot | Twitch</title>
 {% endblock %}
 
+{% block content %}
+<!--
+{% for form in forms %}
+    <form method = "post">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="submit" value="Enter">
+    </form>
+{% endfor %}
+-->
+
+<form method = "post">
+    {% csrf_token %}
+    {{forms.as_p}}
+    <input type="submit" value="Enter">
+</form>
+
+{% endblock %}
+
 {% block requirements %}
         {{ block.super }}
         <link rel="stylesheet" href="{% static 'twitch.css' %}">
