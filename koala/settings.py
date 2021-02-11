@@ -56,6 +56,8 @@ INSTALLED_APPS = [
     'allauth.socialaccount.providers.discord'
 ]
 
+LOGIN_REDIRECT_URL = '/'
+
 SITE_ID = 1
 
 
