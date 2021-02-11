@@ -68,12 +68,16 @@
 			  <span class="slider round"></span>
 			</label>
 			<div class="vertical-container end">
-				<h4>Username#0000</h4>
-				<p>Koala Dev</p>
+                {% if user.is_authenticated %}
+                    {% load account %}
+                    {% user_display user %}
 			</div>
 			<div class="profile-icon">
-				<i class="fas fa-user"></i>
+                <img src="{{ user.socialaccount_set.all.0.get_avatar_url }}" />
 			</div>
+                {% else %}
+                    <a href="http://127.0.0.1:8000/accounts/discord/login">Login</a>
+            {% endif %}
 		</header>
 
 		<main>

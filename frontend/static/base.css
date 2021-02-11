@@ -144,6 +144,11 @@ header .profile-icon {
 	justify-content: center;
 	align-items: center;
 }
+/* Needs improvement to make the profile picture fit the circle */
+header .profile-icon > img {
+	width: 100%;
+	height: auto;
+}
 
 header .vertical-container {
 	height: 100%;
