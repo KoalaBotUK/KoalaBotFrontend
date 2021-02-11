@@ -1,5 +1,5 @@
 # from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from frontend import views
 
 urlpatterns = [
@@ -7,5 +7,6 @@ urlpatterns = [
     path('settings/', views.settings),
     path('verify/', views.verify),
     path('twitch/', views.twitch),
-    path('socialalert/', views.socialAlert)
+    path('socialalert/', views.socialAlert),
+    path('accounts/', include('allauth.urls'))
 ]

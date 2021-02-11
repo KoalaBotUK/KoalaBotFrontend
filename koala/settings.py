@@ -43,12 +43,36 @@ else:
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
+    'django.contrib.sites',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'frontend'
+    'frontend',
+# oAuth specific modules
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.discord'
 ]
+
+SITE_ID = 1
+
+
+# Provider specific settings
+SOCIALACCOUNT_PROVIDERS = {
+    'discord': {
+        # For each OAuth based provider, either add a ``SocialApp``
+        # (``socialaccount`` app) containing the required client
+        # credentials, or list them here:
+        'APP': {
+            'client_id': '809542114634760203',
+            'secret': 'NM_nLLTTF2dK9kWdzMmz8nbooncjkUwb',
+            'key': '7b5ea3c380a34086f0618e3ccce3405fa34dbf460c2f334a9d4be7f896259401'
+        }
+    }
+}
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -110,7 +134,6 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
-
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
