@@ -1,9 +1,9 @@
 from django.http import HttpResponse
 from django.template import loader
-from django.shortcuts import render
 from .forms import *
 
 import KoalaBot
+
 
 class TwitchAlert:
 
@@ -23,7 +23,6 @@ class TwitchAlert:
         except Warning:
             print()
         return message
-
 
     def edit_ta_message(self, guild_id, channel_id, message, replace):
         try:
@@ -74,18 +73,10 @@ class TwitchAlert:
             print()
         return twitch_alert_teams
 
-
-def twitchForm():
-    form = IDSettings()
-    print(form.as_p())
-# ta = TwitchAlert()
-guild_id = 0
-channel_id = 1
-
-# print(ta.view_ta_message(channel_id))
-
-
 # Create your views here.
+
+ta = TwitchAlert()
+ta.edit_ta_message(1, 1, "message", True)
 
 def homepage(request):
     loadTemplate = loader.get_template('home.html')
@@ -99,23 +90,36 @@ def settings(request):
 
 def twitch(request):
     loadTemplate = loader.get_template('twitch.html')
-    forms = []
     if request.method == 'POST':
-        form = IDSettings(request.POST)
-        form2 = MessageForm(request.POST)
-        form3 = UserForm(request.POST)
-        form4 = TeamForm(request.POST)
-    else:
-        form = IDSettings()
-        form2 = MessageForm()
-        form3 = UserForm()
-        form4 = TeamForm()
-        forms.append(form)
-        forms.append(form2)
-        forms.append(form3)
-        forms.append(form4)
+        id_form = IDSettings(request.POST)
+        msg_form = MessageForm(request.POST)
+        user_form = UserForm(request.POST)
+        team_form = TeamForm(request.POST)
 
-    return HttpResponse(loadTemplate.render({'forms': form}, request))
+        if id_form.is_valid():
+            channel_id = id_form.cleaned_data['channel_id']
+            guild_id = id_form.cleaned_data['guild_id']
+            msg_form.fields['view_message'].initial = ''.join(ta.view_ta_message(channel_id)[1])
+            # update other fields
+
+        if msg_form.is_valid():
+            channel_id = id_form.cleaned_data['channel_id']
+            guild_id = id_form.cleaned_data['guild_id']
+
+            ta.edit_ta_message(guild_id, channel_id, msg_form.fields['edit_message'], True)
+            #if msg_form.is_valid():
+
+    else:
+        id_form = IDSettings()
+        msg_form = MessageForm()
+        user_form = UserForm()
+        team_form = TeamForm()
+
+    return HttpResponse(
+        loadTemplate.render({'id_form': id_form,
+                             'msg_form': msg_form,
+                             'user_form': user_form,
+                             'team_form': team_form}, request))
 
 
 def verify(request):

@@ -6,8 +6,7 @@
 {% endblock %}
 
 {% block content %}
-<!--
-{% for form in forms %}
+<!--{% for form in forms %}
     <form method = "post">
         {% csrf_token %}
         {{form.as_p}}
@@ -18,7 +17,24 @@
 
 <form method = "post">
     {% csrf_token %}
-    {{forms.as_p}}
+    {{id_form.as_p}}
+    <input type="submit" value="Enter">
+</form>
+
+<form method = "post">
+    {% csrf_token %}
+    {{msg_form.as_p}}
+    <input type="submit" value="Enter">
+</form>
+
+<form method = "post">
+    {% csrf_token %}
+    {{user_form.as_p}}
+    <input type="submit" value="Enter">
+</form>
+<form method = "post">
+    {% csrf_token %}
+    {{team_form.as_p}}
     <input type="submit" value="Enter">
 </form>
 
