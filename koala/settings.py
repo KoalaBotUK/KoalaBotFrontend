@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 from pathlib import Path
+from dotenv import load_dotenv
 import os
 
 import sys
@@ -59,8 +60,7 @@ INSTALLED_APPS = [
 LOGIN_REDIRECT_URL = '/'
 
 SITE_ID = 1
-
-
+load_dotenv()
 # Provider specific settings
 SOCIALACCOUNT_PROVIDERS = {
     'discord': {
@@ -69,9 +69,9 @@ SOCIALACCOUNT_PROVIDERS = {
         # credentials, or list them here:
         
         'APP': {
-            'client_id': '809542114634760203',
-            'secret': 'NM_nLLTTF2dK9kWdzMmz8nbooncjkUwb',
-            'key': '7b5ea3c380a34086f0618e3ccce3405fa34dbf460c2f334a9d4be7f896259401'
+            'client_id': os.environ['DISCORD_OAUTH_CLIENT_ID'],
+            'secret': os.environ['DISCORD_OAUTH_SECRET'],
+            'key': os.environ['DISCORD_OAUTH_SECRET_KEY']
         },
         'SCOPE': ['identify',
                   'email',
