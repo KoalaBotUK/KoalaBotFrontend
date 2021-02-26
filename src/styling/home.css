@@ -1,0 +1,143 @@
+section#stats {
+  display: flex;
+  border: 2px solid var(--koala-border);
+}
+
+section#stats .left {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid var(--koala-border);
+  background-color: var(--koala-section-background);
+}
+
+section#stats .left .row {
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+section#stats .left .row:nth-child(2) {
+  border-top: 2px solid var(--koala-border);
+  border-bottom: 2px solid var(--koala-border);
+}
+
+section#stats .right {
+  width: 50%;
+  border-left: 1px solid var(--koala-border);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--koala-section-background);
+}
+
+section#extensions .title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+section#extensions .buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--koala-lightgray);
+}
+
+section#extensions .button {
+  height: 35px;
+  width: 45px;
+  margin-left: 10px;
+  border-radius: 5%;
+  background-color: lightgray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 200ms;
+}
+
+section#extensions .button:hover {
+  transform: scale(1.1);
+}
+
+section#extensions .extensions-container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-basis: height 200px;
+}
+
+section#extensions .pill {
+  min-width: 80px;
+  height: 35px;
+  background-color: var(--koala-pill);
+  border-radius: 500px;
+  margin: 10px;
+  padding: 2px 10px;
+  box-sizing: border-box;
+  color: var(--koala-light-text);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+section#extensions .pill.light {
+  background-color: var(--koala-lightgray);
+}
+
+section#updates {
+  display: flex;
+  justify-content: space-between;
+}
+
+section#updates h3 {
+  margin-bottom: 5px;
+}
+
+section#updates .left {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  margin-right: 10px;
+}
+
+section#updates .right {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  margin-left: 10px;
+  min-height: 200px;
+}
+
+section#updates .right svg {
+  margin-left: 10px;
+}
+
+section#updates .ticket {
+  margin: 9px;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+section#updates .ticket-head {
+  margin-bottom: 5px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+section#updates .profile-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid var(--koala-border);
+  margin-right: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+section#updates .ticket h3 {
+  font-size: 1rem;
+}

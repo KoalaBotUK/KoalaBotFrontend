@@ -1,14 +1,10 @@
 # KoalaBotFrontend
+
 KoalaBot Frontend web application
 
 ### Prerequisites
 
-The preferred way to run this webapp locally is by using [virtualenvwrapper](https://pypi.org/project/virtualenvwrapper/) to create a virtualenv for python3.
-
-To do this:
-
-1. Install [python3](https://docs.python.org/3/using/index.html)
-2. Install [virtualenvwrapper](https://virtualenvwrapper.readthedocs.io/en/latest/install.html)
+1. Install [npm](https://www.npmjs.com/get-npm)
 
 ### Update Submodules
 
@@ -22,7 +18,7 @@ Before running the bot you will need to create a `.env` file in the root directo
 
 ```python
 # Discord Bot
-DISCORD_TOKEN = AdiSc0RdT0k3N # A discord Token taken from the discord developers portal 
+DISCORD_TOKEN = AdiSc0RdT0k3N # A discord Token taken from the discord developers portal
 BOT_OWNER = 123456789 # A discord ID for the person who should have access to owner commands
 
 
@@ -37,23 +33,26 @@ GMAIL_PASSWORD = example_password123 # password for the same gmail account
 
 ### Installing
 
-Make a new virtual environment for the project
+Ensure node/npm is installed
 
 ```
-mkvirtualenv venv
+cd KoalaBotFrontend
 ```
 
-Work on the virtual environment
+Install our node dependencies
+
 ```
-workon venv
-```
-install the python3 dependencies
-```
-pip3 install -r requirements.txt
+npm install
 ```
 
-## Running the server
-To run the server:
+### Running the frontend server
+
+Run the frontend server
+
 ```
-./runserver
+npm start
 ```
+
+## Running the backend server
+
+TODO

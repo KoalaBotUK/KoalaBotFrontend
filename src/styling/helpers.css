@@ -1,0 +1,32 @@
+.vertical-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.start {
+  align-items: flex-start;
+}
+
+.end {
+  align-items: flex-end;
+}
+
+.justify-start {
+  justify-content: flex-start;
+}
+
+.justify-end {
+  justify-content: flex-end;
+}
+
+.border {
+  border: 2px solid var(--koala-border);
+}
+
+.scroll-container {
+  max-height: 400px;
+  min-height: 100px;
+  overflow-y: auto;
+  background-color: var(--koala-section-background);
+}
