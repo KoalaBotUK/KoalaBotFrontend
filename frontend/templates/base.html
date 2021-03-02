@@ -7,27 +7,29 @@
     {% block title %}
 		<title>Koalabot</title>
 	{% endblock %}
-	<link rel="stylesheet" href="{% static 'base.css' %}">
-	<link rel="stylesheet" href="{% static 'hamburger.css' %}">
-	<link rel="stylesheet" href="{% static 'helpers.css' %}">
-	<script type="text/javascript" src="{% static 'navbar.js' %}"></script>
-	<script type="text/javascript" src="{% static 'darkMode.js' %}"></script>
+	<link rel="stylesheet" href="{% static 'base/css/base.css' %}">
+	<link rel="stylesheet" href="{% static 'base/css/hamburger.css' %}">
+	<link rel="stylesheet" href="{% static 'base/css/helpers.css' %}">
+	<script type="text/javascript" src="{% static 'base/js/cookies.js' %}"></script>
+	<script type="text/javascript" src="{% static 'base/js/navbar.js' %}"></script>
+	<script type="text/javascript" src="{% static 'base/js/darkMode.js' %}"></script>
 	<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
 	{% block requirements %}
 	{% endblock %}
 </head>
-<body>
+<body onload="checkDarkmodeToggle();openCookieBanner()">
+	<script type="text/javascript">loadDarkmode()</script>
 	<nav id="nav">
 		<a onclick="toggleFullNavigationBar()">
 			<div class="icon">
 				<i class="hamburger"><span></span></i>
 			</div>
 		</a>
-		<a class="dark">
+		<a class="dark" onclick="openNavigationBar();setTimeout(()=>{document.getElementById('navSearchInput').focus()},200)">
 			<div class="icon">
 				<i class="fa fa-search fa-lg"></i>
 			</div>
-			<input type="text" name="">
+			<input type="text" name="" id="navSearchInput">
 		</a>
 		<a class="dark" href="/">
 			<div class="icon">
@@ -62,17 +64,22 @@
 	</nav>
 	<div class="content">
 		<header>
-			<p>Dark Mode</p>
-			<label class="switch">
-			  <input type="checkbox" onchange="toggleDarkMode()">
-			  <span class="slider round"></span>
-			</label>
-			<div class="vertical-container end">
-				<h4>Username#0000</h4>
-				<p>Koala Dev</p>
+			<div class="headerLeftSection">
+				<img src="{% static 'base/img/KoalaBotLogo.png' %}" id="headerLogo">
 			</div>
-			<div class="profile-icon">
-				<i class="fas fa-user"></i>
+			<div class="headerRightSection">
+				<p>Dark Mode</p>
+				<label class="switch">
+				  <input type="checkbox" id="darkmodeToggle" onchange="toggleDarkMode()" disabled="true">
+				  <span class="slider round no-animation" id="darkmodeAnimate"></span>
+				</label>
+				<div class="vertical-container end">
+					<h4>Username#0000</h4>
+					<p>Koala Dev</p>
+				</div>
+				<div class="profile-icon">
+					<i class="fas fa-user"></i>
+				</div>
 			</div>
 		</header>
 
@@ -84,6 +91,12 @@
 		<footer>
 			<p>© KoalaBotUK 2020</p>
 		</footer>
+	</div>
+	<div id="cookieBanner">
+		<div id="cookieContainer">
+			<p>This site uses cookies, by using this site you are accepting that.</p>
+			<div class="button" onclick="acceptCookies()">Accept</div>
+		</div>
 	</div>
 	{% block endRequirements %}
 	{% endblock %}

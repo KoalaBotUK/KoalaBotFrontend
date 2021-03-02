@@ -30,3 +30,15 @@
 	overflow-y: auto;
 	background-color: var(--koala-section-background);
 }
+
+.no-animation{
+	transition:none;
+}
+
+.no-animation::before{
+	transition:none;
+}
+
+.no-animation::after{
+	transition:none;
+}

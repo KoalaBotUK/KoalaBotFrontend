@@ -7,7 +7,7 @@
 
 {% block requirements %}
 		{{ block.super }}
-		<link rel="stylesheet" href="{% static 'home.css' %}">
+		<link rel="stylesheet" href="{% static 'home/css/home.css' %}">
 {% endblock %}
 
 {% block content %}
@@ -57,10 +57,9 @@
 		</div>
 		<div class="border" style="min-height: 250px;background-color: var(--koala-section-background-dark);">
 			<div class="extensions-container">
-				<div class="pill"><p>Verify</p></div>
-				<div class="pill"><p>Twitch Alert</p></div>
-				<div class="pill"><p>Social Alert</p></div>
-				<div class="pill light">+</div>
+				<div class="pill light" onclick="this.classList.toggle('light')"><p>Verify</p></div>
+				<div class="pill light" onclick="this.classList.toggle('light')"><p>Twitch Alert</p></div>
+				<div class="pill light" onclick="this.classList.toggle('light')"><p>Social Alert</p></div>
 			</div>
 		</div>
 	</section>
