@@ -6,6 +6,7 @@
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.5",
     "@testing-library/user-event": "^12.8.1",
+    "express": "^4.17.1",
     "font-awesome": "^4.7.0",
     "node-sass": "^5.0.0",
     "prettier": "^2.2.1",
@@ -17,7 +18,7 @@
     "serve": "^11.3.2"
   },
   "scripts": {
-    "dev": "react-scripts start",
+    "dev": "react-scripts start && node express/express.js",
     "start": "serve -s build",
     "build": "react-scripts build",
     "heroku-postbuild": "npm run build",
@@ -44,5 +45,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "prisma": "^2.18.0"
   }
 }
