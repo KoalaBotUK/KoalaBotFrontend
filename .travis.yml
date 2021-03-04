@@ -1,16 +1,23 @@
-
 language: generic
 
 matrix:
   include:
+    - language: node_js
+      node_js:
+        - "node"
 
-  - language: python
-    python: "3.8"
+      env:
+        - JOBNAME=ESLINT
 
-    env:
-    - JOBNAME=PYLINT
+      scripts:
+        - npm run lint
 
-    install:
-        - pip install -r requirements.txt
-    scripts:
-        - pytest --pylint --ignore KoalaBot
+    - language: node_js
+      node_js:
+        - "node"
+
+      env:
+        - JOBNAME=TESTS
+
+      scripts:
+        - npm run test --watchAll=false

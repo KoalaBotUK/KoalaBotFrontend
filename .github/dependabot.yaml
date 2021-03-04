@@ -1,10 +1,10 @@
 version: 2
 updates:
-  - package-ecosystem: pip  #set the package ecosystem to pip 
-    directory: /  #looking in the root dir for the file
+  - package-ecosystem: npm #set the package ecosystem to npm
+    directory: / #looking in the root dir for the file
     schedule:
-      interval: weekly  #checking weekly for updates
+      interval: weekly #checking weekly for updates
       day: friday #checking on friday
-    assignees:  #assignes people to maintain the PR
+    assignees: #assignes people to maintain the PR
       - 3eak
       - ChrisF999
