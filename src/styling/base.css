@@ -113,6 +113,12 @@ nav input {
   width: calc(100% - 70px);
 }
 
+.headerLeftSection{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .content {
   display: flex;
   flex: 1;
@@ -123,6 +129,11 @@ nav input {
 #headerLogo {
   height: 45px;
   margin-left: 10px;
+}
+
+#headerLogoText{
+  height: 35px;
+  margin-left: 20px;
 }
 
 header {

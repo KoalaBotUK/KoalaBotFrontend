@@ -56,7 +56,7 @@ const Base = ({ children }) => {
 
   const renderDarkModeButton = () => {
     return (
-      <>
+      <React.Fragment>
         <p>Dark Mode</p>
         <label className="switch">
           <input
@@ -67,12 +67,12 @@ const Base = ({ children }) => {
           />
           <span className="slider round"></span>
         </label>
-      </>
+      </React.Fragment>
     );
   };
 
   return (
-    <>
+    <React.Fragment>
       <nav data-testid="sidebar" id="nav">
         <a
           data-testid="sidebar-hamburger"
@@ -140,6 +140,11 @@ const Base = ({ children }) => {
               src={require("../images/KoalaBotLogo.png").default}
               id="headerLogo"
             />
+            <img
+              alt="koala_logo_text"
+              src={require("../images/LogoText.png").default}
+              id="headerLogoText"
+            />
           </div>
           <div className="headerRightSection">
             {renderDarkModeButton()}
@@ -175,7 +180,7 @@ const Base = ({ children }) => {
           </div>
         </div>
       </div>
-    </>
+    </React.Fragment>
   );
 };
 
