@@ -9,3 +9,80 @@ datasource db {
 generator client {
   provider = "prisma-client-js"
 }
+
+model GuildColourChangePermissions {
+    guild_id Int @id 
+    role_id Int
+}
+
+model GuildExtensions{
+  extension_id String @id
+  guild_id Int 
+}
+
+model GuildInvalidCustomColourRoles{
+  guild_id Int @id
+  role_id Int
+}
+model GuildWelcomeMessages{
+  guild_id Int @id
+  welcome_message_id String
+}
+model KoalaExtensions{
+  extension_id String @id
+  subscription_required Boolean
+  available Boolean
+  enabled Boolean
+}
+model TeamInTwitchAlert{
+  twitch_alert_id Int @id
+  channel_id Int
+  twitch_team_name String
+  custom_message String
+}
+model TextFilter{
+  filter_id Int @id
+  guild_id Int
+  filter_type String
+  filter_text String
+}
+model TextFilterIgnoreList{
+  ingore_id Int @id
+  guild_id Int
+  ignore_type String
+  ignore String
+}
+model TextFilterModeration{
+  custom_message Int @id
+  guild_id Int
+}
+model UserInTwitchAlert {
+  channel_id Int @id
+  twitch_team_name String
+  custom_message String
+  message_id Int
+}
+model UserInTwitchTeam{
+  team_twitch_alert_id Int @id
+  twitch_username String
+  custom_message String
+  message_id Int
+}
+model non_verified_emails {
+  u_id Int @id
+  emails String
+  tokens String
+}
+model roles{
+  s_id Int @id
+  u_id Int
+  email_suffix String
+}
+model to_re_verify {
+  u_id Int @id
+  r_id Int
+}
+model verified_emails{
+  u_id Int @id
+  email Int
+}
