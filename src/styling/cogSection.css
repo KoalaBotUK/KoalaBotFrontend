@@ -1,0 +1,48 @@
+.cogSection{
+	height: 20px;
+	background-color: #b3b3b3;
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+	border:2px solid #808080;
+}
+
+.cogSectionBody{
+	background-color: #cccccc;
+	border-top: 2px solid #808080;
+	padding: 20px;
+	display: flex;
+	align-items: flex-start;
+	flex-direction: column;
+}
+
+.cogSectionTitle{
+	font-size: 2rem;
+	margin: 5px;
+	color: white;
+	font-weight: 400;
+	margin-left: 20px;
+}
+
+.button{
+	background-color: #00a775;
+	color: white;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-top: 8px;
+	padding-bottom: 8px;
+	font-size: 1.3rem;
+	font-weight: 200;
+	transition-duration: 200ms;
+	cursor: pointer;
+}
+
+.button:hover{
+	background-color: #11b081;
+}
+
+hr{
+	border:1px solid #4d4d4d;
+	margin-top: 20px;
+	width: 100%;
+}
