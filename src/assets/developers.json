@@ -1,0 +1,108 @@
+{
+  "developers": [
+    {
+      "name": "Jack",
+      "title": "Project Manager",
+      "pic": "Jack.png",
+      "links": {
+        "linkedin": "https://www.linkedin.com/in/jack-draper-495471151/",
+        "twitter": "https://twitter.com/TheJayDwee",
+        "website": "http://jackdraper.co.uk/"
+      }
+    },
+    {
+      "name": "Kieran",
+      "title": "Backend Project Lead",
+      "pic": "Kieran.png",
+      "links": {
+        "linkedin": "https://www.linkedin.com/in/kieran-a-43b30413b/",
+        "twitter": "https://twitter.com/Kaspiian"
+      }
+    },
+    {
+      "name": "Stefan",
+      "title": "Frontend Project Lead",
+      "pic": "Stefan.png",
+      "links": {
+        "linkedin": "https://www.linkedin.com/in/stefan-cooper-491355171",
+        "twitter": "https://twitter.com/3eakStefane",
+        "website": "https://stefancooper.com/"
+      }
+    },
+    {
+      "name": "Viraj",
+      "title": "Developer",
+      "pic": "viraj.png",
+      "links": {
+        "linkedin": "https://www.linkedin.com/in/viraj-shah-2815b8117"
+      }
+    },
+    {
+      "name": "Harry",
+      "title": "Developer",
+      "pic": "harry.png",
+      "links": {
+        "linkedin": "https://www.linkedin.com/in/harry-nelson-97312419a/",
+        "website": "https://harru.club/"
+      }
+    },
+    {
+      "name": "Robert",
+      "title": "Developer",
+      "pic": "Robert.png",
+      "links": {
+        "linkedin": "https://www.linkedin.com/in/robert-slawik-927b12178/",
+        "twitter": "https://twitter.com/RobertSlawik"
+      }
+    },
+    {
+      "name": "Anan",
+      "title": "Developer",
+      "pic": "Anan.png",
+      "links": {
+        "linkedin": "https://www.linkedin.com/in/anan-venkatesh-0316b8156/",
+        "twitter": "https://twitter.com/Unknownlocal371"
+      }
+    },
+    {
+      "name": "John",
+      "title": "Developer",
+      "pic": "john.png",
+      "links": {
+        "linkedin": "https://www.linkedin.com/in/john-watkins-2966ba196/"
+      }
+    },
+    {
+      "name": "Otto",
+      "title": "Developer",
+      "pic": "otto.png",
+      "links": {
+        "linkedin": "https://www.linkedin.com/in/otto-hooper/"
+      }
+    },
+    {
+      "name": "Jack",
+      "title": "Developer",
+      "pic": "jack_2.png",
+      "links": {
+        "linkedin": "https://www.linkedin.com/in/jack-l-a41a83114"
+      }
+    },
+    {
+      "name": "Joe",
+      "title": "Developer",
+      "pic": "joe.png",
+      "links": {
+        "linkedin": "https://linkedin.com/in/joseph-taylor-5716a3172"
+      }
+    },
+    {
+      "name": "Oliver",
+      "title": "Developer",
+      "pic": "default.png",
+      "links": {
+        "linkedin": "https://www.linkedin.com/mwlite/in/oliver-furlong-506807200"
+      }
+    }
+  ]
+}

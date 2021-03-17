@@ -36,7 +36,7 @@ const Base = ({ children }) => {
     document.getElementById("nav").classList.add("active");
 
     Array.prototype.forEach.call(
-      document.getElementsByClassName("hamburger"),
+      document.getElementsByClassName("baseHamburger"),
       function (el) {
         el.classList.add("active");
       }
@@ -47,7 +47,7 @@ const Base = ({ children }) => {
     document.getElementById("nav").classList.toggle("active");
 
     Array.prototype.forEach.call(
-      document.getElementsByClassName("hamburger"),
+      document.getElementsByClassName("baseHamburger"),
       function (el) {
         el.classList.toggle("active");
       }
@@ -65,7 +65,7 @@ const Base = ({ children }) => {
             checked={theme === "dark"}
             data-testid="dark-switch"
           />
-          <span className="slider round"></span>
+          <span className="darkModeSlider round"></span>
         </label>
       </>
     );
@@ -73,15 +73,15 @@ const Base = ({ children }) => {
 
   return (
     <>
-      <nav data-testid="sidebar" id="nav">
+      <nav className="baseNav" data-testid="sidebar" id="nav">
         <a
           data-testid="sidebar-hamburger"
           href={() => false}
           onClick={() => toggleFullNavigationBar()}
         >
-          <div className="icon">
-            <i className="hamburger">
-              <span></span>
+          <div className="baseIcon">
+            <i className="baseHamburger">
+              <span className="hamSpan"></span>
             </i>
           </div>
         </a>
@@ -96,48 +96,48 @@ const Base = ({ children }) => {
             }, 200);
           }}
         >
-          <div className="icon">
+          <div className="baseIcon">
             <i className="fa fa-search fa-lg"></i>
           </div>
           <input type="text" name="" id="navSearchInput"></input>
         </a>
-        <a className="dark" href="/">
-          <div className="icon">
+        <a className="dark" href="/dashboard">
+          <div className="baseIcon">
             <i className="fa fa-th-large fa-lg"></i>
           </div>
           <p>Dashboard</p>
         </a>
-        <a className="dark" href="/settings">
-          <div className="icon">
+        <a className="dark" href="/dashboard/settings">
+          <div className="baseIcon">
             <i className="fa fa-cog fa-lg"></i>
           </div>
           <p>Settings</p>
         </a>
-        <a href="/verify">
-          <div className="icon">
+        <a href="/dashboard/verify">
+          <div className="baseIcon">
             <i className="fa fa-check fa-lg"></i>
           </div>
           <p>Verify</p>
         </a>
-        <a href="/twitch">
-          <div className="icon">
+        <a href="/dashboard/twitch">
+          <div className="baseIcon">
             <i className="fab fa-twitch fa-lg"></i>
           </div>
           <p>Twitch Notify</p>
         </a>
-        <a href="/socialalert">
-          <div className="icon">
+        <a href="/dashboard/socialalert">
+          <div className="baseIcon">
             <i className="fas fa-users fa-lg"></i>
           </div>
           <p>Social Alert</p>
         </a>
       </nav>
       <div className="content">
-        <header data-testid="header">
+        <header className="baseHeader" data-testid="header">
           <div className="headerLeftSection">
             <img
               alt="koala_logo"
-              src={require("../images/KoalaBotLogo.png").default}
+              src={require("../assets/img/KoalaBotLogo.png").default}
               id="headerLogo"
             />
           </div>
@@ -157,7 +157,7 @@ const Base = ({ children }) => {
           <ThemeProvider value={theme}>{children}</ThemeProvider>
         </main>
 
-        <footer data-testid="footer">
+        <footer className="baseFooter" data-testid="footer">
           <p>© KoalaBotUK 2020</p>
         </footer>
       </div>

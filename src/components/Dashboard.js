@@ -3,11 +3,11 @@ import "../styling/home.css";
 import { Timeline } from "react-twitter-widgets";
 import { ThemeContext } from "../context/theme";
 
-const Home = () => {
+const Dashboard = () => {
   const theme = useContext(ThemeContext);
   return (
     <>
-      <section id="stats">
+      <section className="baseSection" id="stats">
         <div className="left">
           <div className="row">
             <div className="vertical-container start">
@@ -43,7 +43,7 @@ const Home = () => {
         </div>
       </section>
 
-      <section id="extensions">
+      <section className="baseSection" id="extensions">
         <div className="title-row">
           <h3>KOALA EXTENSIONS</h3>
           <div className="buttons">
@@ -55,7 +55,7 @@ const Home = () => {
             </div>
           </div>
         </div>
-        <div className="border">
+        <div className="baseBorder">
           <div className="extensions-container">
             {/* These should be populated from the backend, the onClick should call the backend to change extensions enabled */}
             <div
@@ -95,10 +95,10 @@ const Home = () => {
         </div>
       </section>
 
-      <section id="updates">
+      <section className="baseSection" id="updates">
         <div className="left">
           <h3>NEW TICKETS</h3>
-          <div className="border scroll-container vertical-container justify-start">
+          <div className="baseBorder scroll-container vertical-container justify-start">
             <div className="ticket">
               <div className="ticket-head">
                 <div className="profile-icon">
@@ -173,7 +173,7 @@ const Home = () => {
           <h3>
             KOALA UPDATES<i className="fab fa-twitter"></i>
           </h3>
-          <div className="border scroll-container">
+          <div className="baseBorder scroll-container">
             <Timeline
               dataSource={{
                 sourceType: "profile",
@@ -188,4 +188,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Dashboard;

@@ -1,13 +1,15 @@
-.hamburger {
+.baseHamburger {
   position: relative;
   width: 22px;
   height: 22px;
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: unset;
+  margin-right: 5px;
 }
 
-.hamburger span {
+.baseHamburger .hamSpan {
   position: absolute;
   background-color: gray;
   border-radius: 500px;
@@ -16,7 +18,7 @@
   transition: background-color 100ms;
 }
 
-.hamburger span::before {
+.baseHamburger .hamSpan::before {
   content: "";
   position: absolute;
   background-color: gray;
@@ -28,7 +30,7 @@
   transition: transform 200ms;
 }
 
-.hamburger span::after {
+.baseHamburger .hamSpan::after {
   content: "";
   position: absolute;
   background-color: gray;
@@ -40,14 +42,14 @@
   transition: transform 200ms;
 }
 
-.hamburger.active span {
+.baseHamburger.active .hamSpan {
   background-color: #80808000;
 }
 
-.hamburger.active span::before {
+.baseHamburger.active .hamSpan::before {
   transform: scale(1.15) rotate(45deg);
 }
 
-.hamburger.active span::after {
+.baseHamburger.active .hamSpan::after {
   transform: scale(1.15) rotate(-45deg);
 }

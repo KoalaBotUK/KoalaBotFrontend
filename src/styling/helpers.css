@@ -20,7 +20,7 @@
   justify-content: flex-end;
 }
 
-.border {
+.baseBorder {
   border: 2px solid var(--koala-border);
 }
 
